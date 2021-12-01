@@ -1,6 +1,6 @@
-import Validator from './validator';
+import Popovers from './button';
 
-const validDom = document.getElementById('validator');
+const buttonDom = document.getElementById('buttonPop');
 
-const valid = new Validator(validDom);
-valid.check();
+const popover = new Popovers(buttonDom);
+popover.show();
