@@ -12,18 +12,25 @@ body {
 }
 
 .button-block {
-  margin: 80px auto;
-  width: 200px;
+  margin: 150px auto;
+  width: 300px;
+  text-align: center;
 }
 
+.button {
+  position: relative;
+  height: 200px;
+  margin-top: 40px;
+}
 
 .btn {
+  margin-top: 20px;
   font-size: 1.25rem;
   font-weight: normal;
 
   text-align: center;
   white-space: nowrap;
-  vertical-align: middle;
+
   cursor: pointer;
 
   user-select: none;
@@ -35,6 +42,7 @@ body {
   color: #fff;
   background-color: #d9534f;
   border-color: #d9534f;
+
 }
 
 .btn:hover {
@@ -42,3 +50,38 @@ body {
   background-color: #c9302c;
   border-color: #c12e2a;
 }
+
+.popover {
+  position: absolute;
+  border: 1px solid rgba(0,0,0,.2);
+  border-radius: .3rem;
+
+  font-size: .875rem;
+  display: block;
+  text-align: left;
+  width: 270px;
+  line-height: 1.5;
+}
+
+.popover-header {
+  padding: .5rem .75rem;
+  margin-bottom: 0;
+  font-size: 1rem;
+  background-color: #f7f7f7;
+  border-bottom: 1px solid #ebebeb;
+  border-top-left-radius: calc(.3rem - 1px);
+  border-top-right-radius: calc(.3rem - 1px); 
+  color: #212529;
+}
+
+.popover-body {
+  padding: .5rem .75rem;
+  color: #212529;
+  background-color: #fff;
+  border-radius: .3rem;
+}
+
+.visible {
+  visibility: visible;
+}
+
