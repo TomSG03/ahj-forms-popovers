@@ -3,11 +3,11 @@ import { fork } from 'child_process';
 
 jest.setTimeout(30000); // default puppeteer timeout
 
-describe('Credit Card Validator form', () => {
+describe('Popopers show/hide', () => {
   let browser = null;
   let page = null;
   let server = null;
-  const baseUrl = 'http://localhost:9000';
+  const baseUrl = 'http://localhost:8888';
 
   beforeAll(async () => {
     server = fork(`${__dirname}/e2e.server.js`);
@@ -21,8 +21,8 @@ describe('Credit Card Validator form', () => {
     });
 
     browser = await puppetteer.launch({
-      // headless: false, // show gui
-      // slowMo: 100,
+      headless: false, // show gui
+      slowMo: 200,
       // devtools: true, // show devTools
     });
     page = await browser.newPage();
@@ -33,23 +33,16 @@ describe('Credit Card Validator form', () => {
     server.kill();
   });
 
-  test('valid card number', async () => {
+  test('Popopers show/hide', async () => {
     await page.goto(baseUrl);
-    const form = await page.$('.validator .input-box');
-    const input = await form.$('.input');
-    await input.type('370561402995305');
-    const submit = await form.$('.checkButton');
-    submit.click();
-    await page.waitForSelector('.validator .valid');
-  });
+    const button = await page.$('.btn');
 
-  test('invalid card number', async () => {
-    await page.goto(baseUrl);
-    const form = await page.$('.validator .input-box');
-    const input = await form.$('.input');
-    const submit = await form.$('.checkButton');
-    await input.type('370561402995306');
-    submit.click();
-    await page.waitForSelector('.validator .invalid');
+    button.click();
+
+    await page.waitForSelector('.popover .popover-header');
+
+    button.click();
+
+    await page.waitForSelector('.popover .popover-header');
   });
 });

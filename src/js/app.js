@@ -1,4 +1,4 @@
-import Popovers from './button';
+import Popovers from './popovers';
 
 const buttonDom = document.getElementById('buttonPop');
 
