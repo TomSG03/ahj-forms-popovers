@@ -51,7 +51,93 @@ body {
   border-color: #c12e2a;
 }
 
+.arrow {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+}
+
+.arrow::before {
+  content: "";
+  position: absolute; 
+}
+
+.arrow::after {
+  content: "";
+  position: absolute; 
+}
+
+.right::after {
+  left: 6.5px;
+
+  border-top: 10px solid transparent;
+  border-right: 15px solid #fff;
+  border-bottom: 10px solid transparent;
+}
+
+.right::before {
+  left: 5px;
+
+  border-top: 10px solid transparent;
+  border-right: 15px solid rgba(0,0,0,.2);
+  border-bottom: 10px solid transparent;
+}
+
+.left::after {
+  left: 5px;
+
+  border-top: 10px solid transparent;
+  border-left: 15px solid #fff;
+  border-bottom: 10px solid transparent;
+}
+
+.left::before {
+  left: 6.5px;
+
+  border-top: 10px solid transparent;
+  border-left: 15px solid rgba(0,0,0,.2);
+  border-bottom: 10px solid transparent;
+}
+
+.top::after {
+  left: 0;
+  top: 0;
+
+  border-left: 10px solid transparent;
+  border-top: 15px solid #fff;
+  border-right: 10px solid transparent;
+}
+
+.top::before {
+  left: 0px;
+  top: 1px;
+
+  border-left: 10px solid transparent;
+  border-top: 15px solid rgba(0,0,0,.2);
+  border-right: 10px solid transparent;
+}
+
+.bottom::after {
+  left: 2;
+  top: 1px;
+
+  border-left: 10px solid transparent;
+  border-bottom: 15px solid #f7f7f7;
+  border-right: 10px solid transparent;
+}
+
+.bottom::before {
+  left: 0px;
+  top: 0;
+
+  border-left: 10px solid transparent;
+  border-bottom: 15px solid rgba(0,0,0,.2);
+  border-right: 10px solid transparent;
+}
+
+
 .popover {
+  box-sizing: border-box;
   position: absolute;
   border: 1px solid rgba(0,0,0,.2);
   border-radius: .3rem;
