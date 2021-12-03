@@ -21,8 +21,8 @@ describe('Popopers show/hide', () => {
     });
 
     browser = await puppetteer.launch({
-      headless: false, // show gui
-      slowMo: 200,
+      // headless: false, // show gui
+      // slowMo: 200,
       // devtools: true, // show devTools
     });
     page = await browser.newPage();
